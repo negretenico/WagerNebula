@@ -20,6 +20,7 @@ MAPPING: Final[ESPNMapping] = ESPNMapping(
     NBA=ESPN(scores=f"{BASE_URL}/basketball/nba/{SCORES}", teams=f"{BASE_URL}/basketball/nba/{TEAMS}"),
     NCAA_FOOTBALL=ESPN(scores=f"{BASE_URL}/football/college-football/{SCORES}",
                        teams=f"{BASE_URL}/football/college-football/{TEAMS}"),
+    # TODO: fix the fact that we are limiting the response to 10 teams here only
     NFL=ESPN(scores=f"{BASE_URL}/football/nfl/{SCORES}",
              teams=f"{BASE_URL}/football/nfl/{TEAMS}?limit=10"),
 )
