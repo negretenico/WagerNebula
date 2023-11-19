@@ -1,0 +1,28 @@
+name: WagerNebula Workflow
+on:
+  push:
+    branches:
+      - main  # Change this to the default branch of your repository
+  pull_request:
+    branches:
+      - main  # Change this to the default branch of your repository
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # You can choose a different runner if needed
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11 # Specify the Python version you need
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt  # Adjust this command based on your project
+
+      - name: Run tests
+        run: |
+          python run_tests.py  # Replace with the command to run your tests
