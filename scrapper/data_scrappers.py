@@ -11,4 +11,5 @@ def get_data(url: str) -> Result:
             return ResultBuilder.error(response.text).build()
         return ResultBuilder.data(response.json()).build()
     except Exception as e:
+        print(e)
         return ResultBuilder.error(f"Error {e} occurred while making request to {url}").build()

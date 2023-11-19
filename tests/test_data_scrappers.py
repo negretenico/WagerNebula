@@ -3,7 +3,7 @@ from unittest import TestCase
 from unittest.mock import patch, MagicMock
 
 from models.result import Result
-from util.data_scrappers import get_data
+from scrapper.data_scrappers import get_data
 
 
 def check_equality(error, data, result: Result) -> bool:
